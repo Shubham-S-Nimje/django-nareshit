@@ -28,4 +28,14 @@ urlpatterns = [
     path('contacts/', contacts, name='contacts'),
     path('calculator/', calculator, name='calculator'),
     path('students/', students, name='students'),
+
+    path('students/add/', add, name='add students'),
+    path('students/update/', update, name='update students'),
+    path('students/delete/', delete, name='delete students'),
+    path('students/list/', listData, name='list students'),
+    
+    path('students/addstudent/', addstudent, name='add students'),
+    path('students/modify/', modify, name='modify students'),
+    path('students/remove/', remove, name='remove students'),
+    path('students/display/', display, name='display students'),
 ]

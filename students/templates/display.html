@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{%static 'css/home.css'%}" />
-    <title>Students - home</title>
+    <title>Students - list</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link
       rel="stylesheet"
@@ -24,47 +24,47 @@
       <a href="/calculator">Calculator app</a>
       <a href="/students">Students</a>
     </header>
-    <h1 class="text-center font-bold text-3xl py-4">Students</h1>
+    <h1 class="text-center font-bold text-3xl py-4">Students - Display</h1>
     <hr />
     <div class="container mx-auto">
       <div class="flex justify-center items-center gap-20 py-16">
-        <div class="bg-purple-100 rounded-lg border">
-          <div class="mx-10">
+        <form
+          class="bg-purple-100 rounded-lg border min-w-1/2"
+          action="/insertemp"
+        >
+          <table class="mx-10 flex flex-col justify-center items-center">
             <h2 class="text-center font-bold text-2xl py-4 text-purple-700">
-              Students List
+              Student Details
             </h2>
-
-            <div class="max-h-80 overflow-y-scroll">
-              <table class="w-full table-auto border-collapse">
-                <thead>
-                  <tr class="bg-purple-100 text-left sticky top-0">
-                    <th class="px-4 py-2">Roll No</th>
-                    <th class="px-4 py-2">Name</th>
-                    <th class="px-4 py-2">Course</th>
-                    <th class="px-4 py-2">Fee</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for row in studentsList %}
-                  <tr class="hover:bg-gray-100">
-                    <td class="px-4 py-2">{{ row.rollo }}</td>
-                    <td class="px-4 py-2">{{ row.name }}</td>
-                    <td class="px-4 py-2">{{ row.course }}</td>
-                    <td class="px-4 py-2">{{ row.fee }}</td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
+            <tr class="flex gap-2 justify-between items-center py-1 w-full">
+              <td class="w-full p-1 px-2 rounded-lg">
+                  Roll No: {{studentDetails.rollo}}
+              </td>
+            </tr>
+            <tr class="flex gap-2 justify-between items-center py-1 w-full">
+              <td class="w-full p-1 px-2 rounded-lg">
+                  Name: {{studentDetails.name}}
+                </p>
+              </td>
+            </tr>
+            <tr class="flex gap-2 justify-between items-center py-1 w-full">
+              <td class="w-full p-1 px-2 rounded-lg">
+                  Course: {{studentDetails.course}}
+              </td>
+            </tr>
+            <tr class="flex gap-2 justify-between items-center py-1 w-full">
+              <td class="w-full p-1 px-2 rounded-lg">
+                Fees: {{studentDetails.fee}}
+              </td>
+            </tr>
+          </table>
+        </form>
         <ul class="flex flex-col justify-start gap-4">
           <li
-            class="flex justify-start items-center gap-2 border rounded-lg p-2 bg-purple-700 text-white"
+            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
           >
             <i class="fa-solid fa-user-group"></i>
-            <p class="">All Students</p>
+            <a class="" href="/students">All Students</a>
           </li>
           <li
             class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
@@ -85,10 +85,10 @@
             <a class="" href="/students/delete">Delete Students</a>
           </li>
           <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+            class="flex justify-start items-center gap-2 border rounded-lg p-2 bg-purple-700 text-white"
           >
             <i class="fa-solid fa-eye"></i>
-            <a class="" href="/students/display">View Students</a>
+            <p class="">Student Details</p>
           </li>
           <li
             class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
