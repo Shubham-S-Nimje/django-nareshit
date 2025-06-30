@@ -16,6 +16,14 @@
       <a href="/calculator">Calculator app</a>
       <a href="/students">Students</a>
     </header>
-    <h1>contacts</h1>
+    <h1 class="text-center font-bold text-3xl py-4">contacts</h1>
+    <hr />
+    <div>
+      {%if a == 'ironman' %}
+      <h2>{{a}}</h2>
+      {%else%}
+      <h2>{{b}}</h2>
+      {%endif%}
+    </div>
   </body>
 </html>
