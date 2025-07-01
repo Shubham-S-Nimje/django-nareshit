@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-{%load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/contacts.css'%}" />
-    <title>Django - contacts</title>
-  </head>
-  <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/courses">Courses</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/calculator">Calculator app</a>
-      <a href="/students">Students</a>
-    </header>
-    <h1 class="text-center font-bold text-3xl py-4">contacts</h1>
-    <hr />
-    <div>
-      {%if a == 'ironman' %}
-      <h2>{{a}}</h2>
-      {%else%}
-      <h2>{{b}}</h2>
-      {%endif%}
-    </div>
-  </body>
-</html>
+{%extends "layout.html" %} {%block title%} Contacts {%endblock%}
+<br />
+{%block h1%} Contacts {%endblock%} {%block content %}
+<div class="container mx-auto p-4 space-y-8">
+  {%if a == 'ironman' %}
+  <h2>{{a}}</h2>
+  {%else%}
+  <h2>{{b}}</h2>
+  {%endif%}
+</div>
+{%endblock%}

@@ -1,48 +1,30 @@
-<!DOCTYPE html>
-{%load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/calculator.css'%}" />
-    <title>Django - calculator</title>
-  </head>
-  <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/courses">Courses</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/calculator">Calculator app</a>
-      <a href="/students">Students</a>
-    </header>
-    <h1 class="text-center font-bold text-3xl py-4">Calculator</h1>
-    <hr />
-
-    <div>
-      <center>
-        <form method="GET">
-          <table border="2">
-            <tr>
-              <td>First Number</td>
-              <td><input type="text" name="n1" /></td>
-            </tr>
-            <tr>
-              <td>Second Number</td>
-              <td><input type="text" name="n2" /></td>
-            </tr>
-          </table>
-          <div>
-            <input type="submit" value="Add" name="b1" />
-            <input type="submit" value="Sub" name="b1" />
-            <input type="submit" value="Mul" name="b1" />
-            <input type="submit" value="Div" name="b1" />
-          </div>
-        </form>
-        {% if result is not None %}
-        <h2>Result: {{ result }}</h2>
-        {% endif %}
-      </center>
-    </div>
-  </body>
-</html>
+{% extends "layout.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/calculator.css' %}" />
+{% endblock %} {% block title %} Calculator {% endblock %} {% block h1 %}
+Calculator {% endblock %} {% block content %}
+<div>
+  <center>
+    <form method="GET">
+      <table border="2">
+        <tr>
+          <td>First Number</td>
+          <td><input type="text" name="n1" /></td>
+        </tr>
+        <tr>
+          <td>Second Number</td>
+          <td><input type="text" name="n2" /></td>
+        </tr>
+      </table>
+      <div>
+        <input type="submit" value="Add" name="b1" />
+        <input type="submit" value="Sub" name="b1" />
+        <input type="submit" value="Mul" name="b1" />
+        <input type="submit" value="Div" name="b1" />
+      </div>
+    </form>
+    {% if result is not None %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+  </center>
+</div>
+{% endblock %}

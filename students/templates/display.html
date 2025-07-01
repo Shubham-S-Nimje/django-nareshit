@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-{%load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/home.css'%}" />
-    <title>Students - list</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/courses">Courses</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/calculator">Calculator app</a>
-      <a href="/students">Students</a>
-    </header>
-    <h1 class="text-center font-bold text-3xl py-4">Students - Display</h1>
-    <hr />
+{%extends "layout.html" %} {%block title%} Students Display {%endblock%}
+<br />
+{%block h1%} Students Display {%endblock%} {%block content %}
     <div class="container mx-auto">
       <div class="flex justify-center items-center gap-20 py-16">
         <form
@@ -99,5 +74,4 @@
         </ul>
       </div>
     </div>
-  </body>
-</html>
+{%endblock%}

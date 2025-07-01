@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/home.css'%}" />
+
+    {%block css %} {%endblock%}
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Django - {%block title %} Layout Template {%endblock%}</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/courses">Courses</a>
+      <a href="/contacts">Contacts</a>
+      <a href="/calculator">Calculator app</a>
+      <a href="/students">Students</a>
+    </header>
+    <h1 class="text-center font-bold text-3xl py-4">
+      {%block h1 %} Layout Page {%endblock%}
+    </h1>
+    <hr />
+    {%block content %} {%endblock%}
+  </body>
+</html>

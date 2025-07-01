@@ -1,103 +1,77 @@
-<!DOCTYPE html>
-{%load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/home.css'%}" />
-    <title>Students - home</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/courses">Courses</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/calculator">Calculator app</a>
-      <a href="/students">Students</a>
-    </header>
-    <h1 class="text-center font-bold text-3xl py-4">Students</h1>
-    <hr />
-    <div class="container mx-auto">
-      <div class="flex justify-center items-center gap-20 py-16">
-        <div class="bg-purple-100 rounded-lg border">
-          <div class="mx-10">
-            <h2 class="text-center font-bold text-2xl py-4 text-purple-700">
-              Students List
-            </h2>
+{%extends "layout.html" %} {%block title%} Students{%endblock%}
+<br />
+{%block h1%} Students{%endblock%} {%block content %}
+<div class="container mx-auto">
+  <div class="flex justify-center items-center gap-20 py-16">
+    <div class="bg-purple-100 rounded-lg border">
+      <div class="mx-10">
+        <h2 class="text-center font-bold text-2xl py-4 text-purple-700">
+          Students List
+        </h2>
 
-            <div class="max-h-80 overflow-y-scroll">
-              <table class="w-full table-auto border-collapse">
-                <thead>
-                  <tr class="bg-purple-100 text-left sticky top-0">
-                    <th class="px-4 py-2">Roll No</th>
-                    <th class="px-4 py-2">Name</th>
-                    <th class="px-4 py-2">Course</th>
-                    <th class="px-4 py-2">Fee</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for row in studentsList %}
-                  <tr class="hover:bg-gray-100">
-                    <td class="px-4 py-2">{{ row.rollo }}</td>
-                    <td class="px-4 py-2">{{ row.name }}</td>
-                    <td class="px-4 py-2">{{ row.course }}</td>
-                    <td class="px-4 py-2">{{ row.fee }}</td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div class="max-h-80 overflow-y-scroll">
+          <table class="w-full table-auto border-collapse">
+            <thead>
+              <tr class="bg-purple-100 text-left sticky top-0">
+                <th class="px-4 py-2">Roll No</th>
+                <th class="px-4 py-2">Name</th>
+                <th class="px-4 py-2">Course</th>
+                <th class="px-4 py-2">Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in studentsList %}
+              <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2">{{ row.rollo }}</td>
+                <td class="px-4 py-2">{{ row.name }}</td>
+                <td class="px-4 py-2">{{ row.course }}</td>
+                <td class="px-4 py-2">{{ row.fee }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-
-        <ul class="flex flex-col justify-start gap-4">
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg p-2 bg-purple-700 text-white"
-          >
-            <i class="fa-solid fa-user-group"></i>
-            <p class="">All Students</p>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-user-plus"></i>
-            <a class="" href="/students/add">Add Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-pen-to-square"></i>
-            <a class="" href="/students/update">Update Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-user-minus"></i>
-            <a class="" href="/students/delete">Delete Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-eye"></i>
-            <a class="" href="/students/display">View Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <a class="" href="#">Search Students</a>
-          </li>
-        </ul>
       </div>
     </div>
-  </body>
-</html>
+
+    <ul class="flex flex-col justify-start gap-4">
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg p-2 bg-purple-700 text-white"
+      >
+        <i class="fa-solid fa-user-group"></i>
+        <p class="">All Students</p>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-user-plus"></i>
+        <a class="" href="/students/add">Add Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-pen-to-square"></i>
+        <a class="" href="/students/update">Update Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-user-minus"></i>
+        <a class="" href="/students/delete">Delete Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-eye"></i>
+        <a class="" href="/students/display">View Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <a class="" href="#">Search Students</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{%endblock%}

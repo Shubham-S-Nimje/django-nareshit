@@ -1,136 +1,105 @@
-<!DOCTYPE html>
-{%load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/about.css'%}" />
-    <title>Students - add</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/courses">Courses</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/calculator">Calculator app</a>
-      <a href="/students">Students</a>
-    </header>
-    <h1 class="text-center font-bold text-3xl py-4">Students - add</h1>
-    <hr />
-    <div class="container mx-auto">
-      <div class="flex justify-center items-center gap-20 py-16">
-        <form
-          class="bg-purple-100 rounded-lg border"
-          action="/students/addstudent"
-        >
-          <table class="mx-10 flex flex-col justify-center items-center">
-            <h2 class="text-center font-bold text-2xl py-4 text-purple-700">
-              Add Students
-            </h2>
-            <tr class="flex gap-2 justify-between items-center py-2 w-full">
-              <td class="">
-                <input
-                  class="bg-white w-full p-1 px-2 rounded-lg"
-                  placeholder="Enter roll no"
-                  type="text"
-                  name="rollno"
-                />
-              </td>
-            </tr>
-            <tr class="flex gap-2 justify-between items-center py-2 w-full">
-              <td class="">
-                <input
-                  class="bg-white w-full p-1 px-2 rounded-lg"
-                  placeholder="Enter student name"
-                  type="text"
-                  name="name"
-                />
-              </td>
-            </tr>
-            <tr class="flex gap-2 justify-between items-center py-2 w-full">
-              <td class="">
-                <input
-                  class="bg-white w-full p-1 px-2 rounded-lg"
-                  placeholder="Enter course name"
-                  type="text"
-                  name="course"
-                />
-              </td>
-            </tr>
-            <tr class="flex gap-2 justify-between items-center py-2 w-full">
-              <td class="">
-                <input
-                  class="bg-white w-full p-1 px-2 rounded-lg"
-                  placeholder="Enter fees"
-                  type="number"
-                  name="fees"
-                />
-              </td>
-            </tr>
-            <tr
-              class="flex gap-2 justify-between items-center py-2 my-4 w-full"
-            >
-              <td
-                class="w-full bg-purple-700 hover:bg-purple-400 hover:text-black text-white rounded-lg border"
-              >
-                <input
-                  class="w-full p-1 rounded-lg text-lg font-bold"
-                  type="submit"
-                  value="Add Student"
-                />
-              </td>
-            </tr>
-          </table>
-        </form>
+{%extends "layout.html" %} {%block title%} Students add {%endblock%}
+<br />
+{%block h1%} Students add {%endblock%} {%block content %}
+<div class="container mx-auto">
+  <div class="flex justify-center items-center gap-20 py-16">
+    <form class="bg-purple-100 rounded-lg border" action="/students/addstudent">
+      <table class="mx-10 flex flex-col justify-center items-center">
+        <h2 class="text-center font-bold text-2xl py-4 text-purple-700">
+          Add Students
+        </h2>
+        <tr class="flex gap-2 justify-between items-center py-2 w-full">
+          <td class="">
+            <input
+              class="bg-white w-full p-1 px-2 rounded-lg"
+              placeholder="Enter roll no"
+              type="text"
+              name="rollno"
+            />
+          </td>
+        </tr>
+        <tr class="flex gap-2 justify-between items-center py-2 w-full">
+          <td class="">
+            <input
+              class="bg-white w-full p-1 px-2 rounded-lg"
+              placeholder="Enter student name"
+              type="text"
+              name="name"
+            />
+          </td>
+        </tr>
+        <tr class="flex gap-2 justify-between items-center py-2 w-full">
+          <td class="">
+            <input
+              class="bg-white w-full p-1 px-2 rounded-lg"
+              placeholder="Enter course name"
+              type="text"
+              name="course"
+            />
+          </td>
+        </tr>
+        <tr class="flex gap-2 justify-between items-center py-2 w-full">
+          <td class="">
+            <input
+              class="bg-white w-full p-1 px-2 rounded-lg"
+              placeholder="Enter fees"
+              type="number"
+              name="fees"
+            />
+          </td>
+        </tr>
+        <tr class="flex gap-2 justify-between items-center py-2 my-4 w-full">
+          <td
+            class="w-full bg-purple-700 hover:bg-purple-400 hover:text-black text-white rounded-lg border"
+          >
+            <input
+              class="w-full p-1 rounded-lg text-lg font-bold"
+              type="submit"
+              value="Add Student"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
 
-        <ul class="flex flex-col justify-start gap-4">
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-user-group"></i>
-            <a class="" href="/students">All Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg p-2 bg-purple-700 text-white"
-          >
-            <i class="fa-solid fa-user-plus"></i>
-            <p class="">Add Students</p>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-pen-to-square"></i>
-            <a class="" href="/students/update">Update Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-user-minus"></i>
-            <a class="" href="/students/delete">Delete Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-eye"></i>
-            <a class="" href="/students/display">View Students</a>
-          </li>
-          <li
-            class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
-          >
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <a class="" href="#">Search Students</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </body>
-</html>
+    <ul class="flex flex-col justify-start gap-4">
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-user-group"></i>
+        <a class="" href="/students">All Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg p-2 bg-purple-700 text-white"
+      >
+        <i class="fa-solid fa-user-plus"></i>
+        <p class="">Add Students</p>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-pen-to-square"></i>
+        <a class="" href="/students/update">Update Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-user-minus"></i>
+        <a class="" href="/students/delete">Delete Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-eye"></i>
+        <a class="" href="/students/display">View Students</a>
+      </li>
+      <li
+        class="flex justify-start items-center gap-2 border rounded-lg bg-purple-100 p-2 hover:bg-purple-700 hover:text-white"
+      >
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <a class="" href="#">Search Students</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{%endblock%}
