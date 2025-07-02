@@ -19,18 +19,12 @@
     <title>Django - {%block title %} Layout Template {%endblock%}</title>
   </head>
   <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/courses">Courses</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/calculator">Calculator app</a>
-      <a href="/students">Students</a>
-    </header>
+    {% include "header.html" %}
     <h1 class="text-center font-bold text-3xl py-4">
       {%block h1 %} Layout Page {%endblock%}
     </h1>
     <hr />
-    {%block content %} {%endblock%}
+    <div class="min-h-screen">{%block content %} {%endblock%}</div>
+    {% include "footer.html" %}
   </body>
 </html>
