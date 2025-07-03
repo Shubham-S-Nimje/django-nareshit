@@ -1,11 +1,42 @@
 {%extends "layout.html" %} {%block title%} Contacts {%endblock%}
 <br />
-{%block h1%} Contacts {%endblock%} {%block content %}
+{%block h1%} Contact Us {%endblock%} {%block content %}
 <div class="container mx-auto p-4 space-y-8">
   {%if a == 'ironman' %}
   <h2>{{a}}</h2>
   {%else%}
   <h2>{{b}}</h2>
   {%endif%}
+
+  <form
+    method="POST"
+    class="max-w-md mx-auto bg-purple-100 p-6 rounded-lg shadow-md space-y-4"
+  >
+    {% csrf_token %} {% for field in studform %}
+    <div>
+      <div class="flex justify-between items-center mb-4">
+        <label
+          for="{{ field.id_for_label }}"
+          class="block text-sm font-medium text-gray-700 mb-1 w-1/3"
+        >
+          {{ field.label }} :
+        </label>
+        <p class="bg-white w-full">{{ field }}</p>
+      </div>
+      {% if field.errors %}
+      <p class="text-red-500 text-sm mt-1">{{ field.errors }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <div class="flex justify-center items-center">
+      <button
+        type="submit"
+        class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
 {%endblock%}

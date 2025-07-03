@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from app1.forms import StudentForm
 
 def homePage(request):
     # ================v1======================
@@ -24,8 +25,21 @@ def contacts(request):
     a = 'ironman'
     b = 'thor'
     c =  'deadpool'
-    response=render(request,"contacts.html", context={'a':a,'b':b,'c':c})
-    return response  
+    # response=render(request,"contacts.html", context={'a':a,'b':b,'c':c})
+
+    if request.method == 'POST':
+        studform = StudentForm(request.POST)
+        if studform.is_valid():
+            print(studform.cleaned_data)
+            return render(request, "success.html", {'form': studform.cleaned_data})
+        else:
+            response=render(request,"contacts.html",context={'a':a,'b':b,'c':c, 'studform':studform})
+            return response
+    else:
+        studform = StudentForm(request.POST)
+        response=render(request,"contacts.html",context={'a':a,'b':b,'c':c, 'studform':studform})
+        return response 
+
 def courses(request):
     a = 'python'
     b = 'django'
