@@ -28,6 +28,7 @@ urlpatterns = [
     path('contacts/', contacts, name='contacts'),
     path('calculator/', calculator, name='calculator'),
     path('students/', students, name='students'),
+    path('register/', register, name='register'),
 
     path('students/add/', add, name='add students'),
     path('students/update/', update, name='update students'),

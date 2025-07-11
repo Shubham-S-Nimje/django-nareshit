@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import StudentsModel
+from students.forms import AddStudentForm
 
 def students(request):
     students=StudentsModel.objects.all()
@@ -8,8 +9,21 @@ def students(request):
     return res
 
 def add(request):
-    res=render(request,"add.html", context={})
+    if request.method=="POST":
+        form=AddStudentForm(request.POST)
+        print(form)
+        if form.is_valid():
+            res=render(request,"success.html",context={'msg':'input data is valid'})
+            return res 
+        else:
+            res=render(request,"add.html",context={'form':form})
+            return res 
+    form=AddStudentForm()
+    res=render(request,"add.html",context={'form':form})
     return res
+    # res=render(request,"add.html", context={})
+    # return res
+
 def update(request):
     res=render(request,"update.html", context={})
     return res
@@ -25,8 +39,8 @@ def addstudent(request):
     name=request.GET.get('name')
     course=request.GET.get('course')
     fees=request.GET.get('fees')
-    # print(rollno, name, course, fees)
-    StudentsModel.objects.create(rollo=rollno, name=name, course=course, fee=fees)
+    print(rollno, name, course, fees)
+    # StudentsModel.objects.create(rollo=rollno, name=name, course=course, fee=fees)
     res=render(request,"add.html", context={})
     return res
 
