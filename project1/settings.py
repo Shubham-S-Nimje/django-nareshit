@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1',
     'calculator',
-    'students'
+    'students',
+    'doc',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'project1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates', BASE_DIR/"calculator/templates/"],
+        'DIRS': [BASE_DIR/'templates', BASE_DIR/"calculator/templates/", BASE_DIR/"doc/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,23 +76,23 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'db_test',
-        'USER':'root',
-        'PASSWORD':'Shubham@2512',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME':'db_test',
+#         'USER':'root',
+#         'PASSWORD':'Shubham@2512',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
 
 
 # Password validation

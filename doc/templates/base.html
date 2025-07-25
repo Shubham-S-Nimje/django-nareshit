@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital Patient Appointment Management System</title>
+    <style>
+      .nav {
+        width: 100%;
+        padding: 20px;
+        border: 2px black;
+        background-color: azure;
+      }
+      span {
+        margin-left: 20px;
+      }
+      a {
+        text-decoration: None;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <h2>Hospital Patient Appointment Management System</h2>
+      <span><a href="/doc">Home</a></span>
+    </div>
+    <div class="nav">
+      <span><a href="{% url 'doctoradd'%}">Add Doctor</a></span>
+      <span><a href="{% url 'doctorlist'%}">List Doctors</a></span>
+      <span><a href="{% url 'patientadd'%}">Add Patient</a></span>
+      <span><a href="{% url 'patientlist'%}">List Patients</a></span>
+      <span><a href="{% url 'appointment'%}">Appointment</a></span>
+      <span><a href="{% url 'applist'%}">AppointmentList</a></span>
+    </div>
+    {%block content%} {%endblock%}
+  </body>
+</html>

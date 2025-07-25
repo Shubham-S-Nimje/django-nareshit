@@ -1,0 +1,22 @@
+{%extends 'base.html'%} {%block content%}
+<table border="1" width="50%">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Contact</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {%for row in qs%}
+  <tr>
+    <td>{{row.name}}</td>
+    <td>{{row.age}}</td>
+    <td>{{row.gender}}</td>
+    <td>{{row.contact}}</td>
+    <td><a href="{%url 'patientedit' row.name%}">Edit</a></td>
+    <td><a href="{%url 'patientdelete' row.name%}">Delete</a></td>
+  </tr>
+  {%endfor%}
+</table>
+{%endblock%}
