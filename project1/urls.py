@@ -42,4 +42,5 @@ urlpatterns = [
     path('students/display/', display, name='display students'),
 
     path('doc/', include('doc.urls')),
+    path('cookies/', include('cookies.urls')),
 ]

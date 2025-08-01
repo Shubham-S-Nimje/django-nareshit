@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'calculator',
     'students',
     'doc',
+    'cookies'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'project1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates', BASE_DIR/"calculator/templates/", BASE_DIR/"doc/templates/"],
+        'DIRS': [BASE_DIR/'templates', BASE_DIR/"calculator/templates/", BASE_DIR/"doc/templates/", BASE_DIR/"cookies/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
