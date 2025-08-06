@@ -43,4 +43,5 @@ urlpatterns = [
 
     path('doc/', include('doc.urls')),
     path('cookies/', include('cookies.urls')),
+    path('authentication/', include('authentication.urls')),
 ]

@@ -37,11 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'authentication',
     'app1',
     'calculator',
     'students',
     'doc',
-    'cookies'
+    'cookies',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'project1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates', BASE_DIR/"calculator/templates/", BASE_DIR/"doc/templates/", BASE_DIR/"cookies/templates/"],
+        'DIRS': [ BASE_DIR/"authentication/templates/", BASE_DIR/'templates', BASE_DIR/"calculator/templates/", BASE_DIR/"doc/templates/", BASE_DIR/"cookies/templates/",],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
